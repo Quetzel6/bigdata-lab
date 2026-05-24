@@ -1,140 +1,86 @@
-# LAB 02 — HDFS & Hadoop Basic Commands
+# LAB02 — HDFS & Hadoop Basic
 
 ## Objective
 
-This lab introduces Hadoop Distributed File System (HDFS) basic operations 
-including:
-
-- Creating files
-- Uploading files to HDFS
-- Viewing file contents
-- Managing directories
-- Checking replication factors
+This lab introduces basic Hadoop Distributed File System (HDFS) operations 
+on AWS EMR.
 
 ---
 
-# Prerequisites
-
-- AWS EMR Cluster Running
-- SSH Access to EMR Master Node
-- Hadoop Installed
-
----
-
-# Step 1 — Connect to EMR
+## Step 1 — Connect to EMR Cluster
 
 ```bash
-ssh -i [private-key.pem] hadoop@[EMR-PUBLIC-IP]
-```
-
-Example:
-
-```bash
-ssh -i bigdata.pem hadoop@18.210.11.70
+ssh -i ~/Downloads/bigdata.pem hadoop@[EMR-PUBLIC-IP]
 ```
 
 ---
 
-# Step 2 — Check Hadoop Installation
+## Step 2 — Check Hadoop Version
 
 ```bash
 hadoop version
 ```
 
-Expected output:
-
-```text
-Hadoop 3.x.x
-```
+![Hadoop Version](images/hadoop-version.png)
 
 ---
 
-# Step 3 — Create Local File
-
-Create a CSV file containing your name.
+## Step 3 — Create Local File
 
 ```bash
-nano RE_65102010100.csv
+nano RE_66102010185.csv
 ```
 
 Example content:
 
 ```text
-65102010100,Vikhom Manpiriya
+66102010185,Vikhom Manpiriya
 ```
-
-Save file.
 
 ---
 
-# Step 4 — Create HDFS Directory
+## Step 4 — Create HDFS Directory
 
 ```bash
-hdfs dfs -mkdir -p /user/hadoop
+hadoop fs -mkdir input
 ```
 
 ---
 
-# Step 5 — Upload File to HDFS
+## Step 5 — Upload File to HDFS
 
 ```bash
-hdfs dfs -put RE_65102010100.csv /user/hadoop/
+hadoop fs -put RE_66102010185.csv input
 ```
 
 ---
 
-# Step 6 — Verify Uploaded File
-
-List files:
+## Step 6 — Verify Uploaded File
 
 ```bash
-hdfs dfs -ls /user/hadoop/
+hadoop fs -ls input
 ```
+
+![HDFS File Listing](images/hdfs-file-list.png)
 
 ---
 
-# Step 7 — Display File Content
+## Step 7 — Read File from HDFS
 
 ```bash
-hdfs dfs -cat /user/hadoop/RE_65102010100.csv
+hadoop fs -cat input/RE_66102010185.csv
 ```
 
-Expected output:
-
-```text
-65102010100,Vikhom Manpiriya
-```
+![HDFS CAT](images/hdfs-cat.png)
 
 ---
 
-# Step 8 — Set Replication Factor
-
-```bash
-hdfs dfs -setrep -w 2 /user/hadoop/RE_65102010100.csv
-```
-
----
-
-# Step 9 — Verify Replication
-
-```bash
-hdfs fsck /user/hadoop/RE_65102010100.csv -files -blocks
-```
-
-Expected output should contain:
-
-```text
-Replication factor: 2
-```
-
----
-
-# Step 10 — Open NameNode Web UI
+## Step 8 — Open HDFS Browser
 
 Open browser:
 
 ```text
-http://[EMR-MASTER-IP]:9870
+http://[EMR-PUBLIC-IP]:9870
 ```
 
 Navigate to:
@@ -143,92 +89,33 @@ Navigate to:
 Utilities → Browse the file system
 ```
 
-Verify:
-- File exists
-- Replication factor = 2
+Path:
 
----
-
-# Common HDFS Commands
-
-## Create Directory
-
-```bash
-hdfs dfs -mkdir /data
+```text
+/user/hadoop/input
 ```
 
----
-
-## Remove File
-
-```bash
-hdfs dfs -rm /user/hadoop/file.csv
-```
+![HDFS Browser](images/hdfs-browser.png)
 
 ---
 
-## Remove Directory
+## Step 9 — Verify Replication Factor
 
-```bash
-hdfs dfs -rm -r /data
-```
+Click the uploaded file and verify block replication information.
 
----
-
-## Copy From Local to HDFS
-
-```bash
-hdfs dfs -put localfile.txt /data/
-```
+![Replication Detail](images/replication-detail.png)
 
 ---
 
-## Copy From HDFS to Local
+## Conclusion
 
-```bash
-hdfs dfs -get /data/file.txt
-```
+This lab demonstrates:
+- Hadoop basic operations
+- HDFS file management
+- File replication
+- HDFS Web UI verification
 
----
+--
 
-# Common Errors
-
-## Error: File exists
-
-Solution:
-
-```bash
-hdfs dfs -rm /user/hadoop/file.csv
-```
-
-Then upload again.
-
----
-
-## Error: Permission denied
-
-Ensure current user has permission to access HDFS directory.
-
----
-
-# Expected Result
-
-- File uploaded to HDFS
-- Replication factor set to 2
-- File visible in NameNode Web UI
-
----
-
-# Screenshots to Capture
-
-- Hadoop version
-- HDFS file listing
-- HDFS file content
-- Replication factor
-- NameNode Web UI
-
----
-
-# Author
-
+#Author 
 Vikhom Manpiriya
