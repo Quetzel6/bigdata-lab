@@ -1,130 +1,205 @@
-Big Data Engineering Labs
+# Big Data Engineering Labs
 
-Welcome to the Big Data Engineering Labs Repository.
-This repository contains hands-on laboratory exercises for Big Data 
-Engineering using Hadoop ecosystem technologies such as HDFS, Hive, Sqoop, 
-Kafka, Spark, Phoenix, Metabase, and Zeppelin.
+Welcome to the **Big Data Engineering Labs Repository**.
 
-The purpose of this repository is:
+This repository contains hands-on laboratory exercises and documentation 
+for Big Data Engineering using Hadoop ecosystem technologies including:
 
--To practice Big Data tools and workflows
--To document lab procedures step-by-step
--To provide learning materials for junior students
--To demonstrate real-world Big Data architectures and processing pipelines
+- Hadoop
+- HDFS
+- Hive
+- Oozie
+- Spark MLlib
+- Kafka
+- Phoenix
+- Metabase
+- Presto
+- Linux Administration
+- PKI & LDAP
 
---
+The repository is designed for:
+- Big Data Engineering practice
+- Hadoop ecosystem learning
+- Lab documentation
+- Teaching junior students
+- Building practical data engineering skills
 
+---
 
-Student Information
-Name	                Student ID
-Vikhom Manpiriya	66102010185
+# Student Information
 
---
+| Name | Student ID |
+|---|---|
+| Vikhom Manpiriya | 66102010185 |
 
+---
 
-Repository Structure
+# Repository Structure
+
+```text
 bigdata-lab/
 │
-├── LAB01-EMR-SETUP
+├── LAB01-EMR-EC2-SETUP
 ├── LAB02-HDFS-HADOOP-BASIC
-├── LAB03-HIVE-PARQUET
-├── LAB04-HIVE-HUE-OOZIE
-├── LAB05-METABASE-PRESTO-DASHBOARD
+├── LAB03-HIVE-SQOOP
+├── LAB04-OOZIE-HIVE
+├── LAB05-METABASE-ANALYTICS
 ├── LAB06-SPARK-MLLIB
 ├── LAB07-PHOENIX-HBASE
 ├── LAB08-KAFKA-STREAMING
+├── LAB09-PKI-LDAP
+├── LAB10-HADOOP-INSTALLATION
 │
 └── README.md
+```
 
---
+---
 
-Technologies Used
-Technology	Description
-Hadoop	        Distributed storage and processing
-HDFS	        Hadoop Distributed File System
-Hive	        SQL engine for Hadoop
-Hue	        Hadoop Web UI
-Oozie	        Workflow scheduler
-Sqoop	        Data import/export tool
-Presto	        Distributed SQL query engine
-Metabase	Data visualization dashboard
-Apache Spark	Big data processing engine
-Spark MLlib	Machine learning library
-Phoenix	        SQL layer over HBase
-Kafka	        Real-time streaming platform
-Zeppelin	Web-based notebook for Spark
+# Table of Contents
 
---
+1. LAB01 — AWS EMR EC2 Setup
+2. LAB02 — HDFS Hadoop Basic
+3. LAB03 — Hive & Sqoop
+4. LAB04 — Oozie & Hive
+5. LAB05 — Metabase Analytics
+6. LAB06 — Spark MLlib
+7. LAB07 — Phoenix & HBase
+8. LAB08 — Kafka Streaming
+9. LAB09 — PKI, User Management & LDAP
+10. LAB10 — Hadoop Installation from Scratch
 
-Lab Descriptions
-LAB01 — EMR Hadoop Cluster Setup
--Launch AWS EC2 instance
--Configure security groups
--SSH connection to Linux server
--Introduction to Hadoop environment
+---
 
---
+# Technologies Used
 
-LAB02 — HDFS Hadoop Basic
--Create HDFS directories
--Upload files into HDFS
--Explore Hadoop NameNode UI
--Understand distributed file storage
+| Technology | Purpose |
+|---|---|
+| Hadoop | Distributed data processing |
+| HDFS | Distributed file storage |
+| Hive | SQL engine for Hadoop |
+| Oozie | Workflow scheduling |
+| Sqoop | Data import/export |
+| Spark | Distributed analytics |
+| Spark MLlib | Machine learning |
+| Kafka | Real-time streaming |
+| Phoenix | SQL layer on HBase |
+| HBase | NoSQL distributed database |
+| Metabase | Business intelligence dashboard |
+| Presto | Distributed SQL query engine |
+| Zeppelin | Spark notebook |
+| Linux | Server operating system |
+| SSH / PKI | Authentication & security |
 
---
+---
 
-LAB03 — Hive & Parquet
--Create Hive external tables
--Load CSV data into Hive
--Convert data to Parquet format
--Query structured data using SQL
+# Lab Descriptions
 
---
+---
 
-LAB04 — Hive, Hue & Oozie
--Use Hue Query Editor
--Execute Hive queries
--Create Oozie workflows
--Automate Hadoop jobs
+## LAB01 — AWS EMR EC2 Setup
 
---
+Topics:
+- AWS EC2
+- Linux server setup
+- SSH access
+- Security Group configuration
 
-LAB05 — Metabase, Presto & Dashboard
--Connect Presto to Hive
--Query data using Presto
--Build analytics dashboards
--Create charts and visualizations
+---
 
---
+## LAB02 — HDFS Hadoop Basic
 
-LAB06 — Spark MLlib
--Run Spark machine learning models
--Use K-Means clustering
--Use classification algorithms
--Analyze prediction results
+Topics:
+- HDFS commands
+- File upload/download
+- Hadoop NameNode UI
+- Replication factor
 
---
+---
 
-LAB07 — Phoenix & HBase
--Create Phoenix tables
--Insert and query records
--Use SQL on HBase
--Explore distributed NoSQL systems
+## LAB03 — Hive & Sqoop
 
---
+Topics:
+- Hive external tables
+- CSV import
+- Sqoop integration
+- Parquet conversion
 
-LAB08 — Kafka Streaming
--Build Kafka producer/consumer system
--Real-time coffee order monitoring
--Streaming analytics
--Distributed messaging architecture
+---
 
+## LAB04 — Oozie & Hive
 
---
+Topics:
+- Oozie workflows
+- Hive query execution
+- Hue query editor
+- Automated pipelines
 
+---
 
-Example Big Data Workflow
+## LAB05 — Metabase Analytics
 
+Topics:
+- Presto integration
+- Dashboard creation
+- Sales analytics
+- Business intelligence visualization
+
+---
+
+## LAB06 — Spark MLlib
+
+Topics:
+- PySpark
+- KMeans clustering
+- Prediction models
+- Zeppelin notebooks
+
+---
+
+## LAB07 — Phoenix & HBase
+
+Topics:
+- Apache Phoenix
+- HBase SQL queries
+- UPSERT operations
+- Distributed NoSQL systems
+
+---
+
+## LAB08 — Kafka Streaming
+
+Topics:
+- Kafka producer
+- Kafka consumer
+- Real-time analytics
+- Streaming systems
+
+---
+
+## LAB09 — PKI, User Management & LDAP
+
+Topics:
+- SSH authentication
+- Public/private keys
+- Linux user management
+- LDAP concepts
+
+---
+
+## LAB10 — Hadoop Installation from Scratch
+
+Topics:
+- Hadoop installation
+- HDFS configuration
+- YARN configuration
+- NameNode formatting
+- Hadoop services
+
+---
+
+# Example Big Data Workflow
+
+```text
 MySQL
    │
    ▼
@@ -138,38 +213,64 @@ Presto
    │
    ▼
 Metabase Dashboard
+```
 
---
+---
 
-Learning Outcomes
+# Learning Outcomes
 
-After completing these labs, students will be able to:
+After completing these labs, students can:
 
--Configure Big Data environments
--Use Hadoop ecosystem tools
--Process distributed data
--Build data pipelines
--Perform real-time streaming analytics
--Create business intelligence dashboards
--Apply machine learning on Big Data systems
+- Configure Hadoop environments
+- Use distributed storage systems
+- Query large datasets
+- Build analytics pipelines
+- Create BI dashboards
+- Use machine learning tools
+- Implement streaming systems
+- Configure Linux authentication systems
 
---
+---
 
+# Screenshots & Documentation
 
-Screenshots
+Each lab contains:
+- Step-by-step instructions
+- Commands
+- Configuration examples
+- Screenshots
+- Query examples
+- Architecture explanations
 
-Each lab folder contains:
+---
 
--Step-by-step instructions
--Commands used
--Explanations
--Screenshots of results
+# GitHub Repository
 
---
+Repository URL:
 
-Conclusion
+```text
+https://github.com/Quetzel6/bigdata-lab
+```
+
+---
+
+# Conclusion
 
 This repository demonstrates practical Big Data Engineering workflows 
 using modern distributed technologies and cloud-based environments.
-The labs provide hands-on experience with storage, processing, analytics, 
-machine learning, and streaming systems in the Hadoop ecosystem.
+
+The labs cover:
+- Storage
+- Processing
+- Analytics
+- Streaming
+- Security
+- Machine learning
+- Business intelligence
+
+within the Hadoop ecosystem.
+
+--
+
+#Author
+Vikhom Manpiriya
